@@ -29,7 +29,14 @@
         </div>
         <div class="actions">
           <button id="drawBtn" class="primary">抽卡</button>
+          <span id="drawInfo" class="muted" style="margin-left:8px;"></span>
         </div>
+      </div>
+
+      <div class="card">
+        <h2>能量曼陀羅</h2>
+        <svg id="mandala" viewBox="0 0 300 300" class="mandala"></svg>
+        <p class="muted">每完成一項任務，花瓣會逐漸點亮。</p>
       </div>
     </section>
 
@@ -59,6 +66,8 @@
       </div>
     </section>
   </main>
+
+  <div id="debug" class="debug" style="display:none;"></div>
 
   <script src="js/cards.js"></script>
   <script src="js/app.js"></script>
