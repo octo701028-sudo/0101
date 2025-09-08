@@ -1,9 +1,9 @@
 {
-  "name": "Enervi7 • 光之七境",
+  "name": "Enervi7 光之七境",
   "short_name": "Enervi7",
-  "start_url": ".",
+  "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#0e0f16",
+  "background_color": "#ffffff",
   "theme_color": "#7b61ff",
   "icons": [
     {

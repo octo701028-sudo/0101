@@ -1,23 +1,19 @@
-
-const CACHE = "enervi7-v1";
-const ASSETS = [
-  "./",
-  "./index.html",
-  "./css/style.css",
-  "./js/app.js",
-  "./js/data.js",
-  "./manifest.json",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png"
-];
-self.addEventListener("install", e=>{
-  e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open("enervi7").then(cache => {
+      return cache.addAll([
+        "index.html",
+        "css/style.css",
+        "js/cards.js",
+        "js/app.js"
+      ]);
+    })
+  );
 });
-self.addEventListener("activate", e=>{
-  e.waitUntil(self.clients.claim());
-});
-self.addEventListener("fetch", e=>{
+self.addEventListener("fetch", e => {
   e.respondWith(
-    caches.match(e.request).then(res=> res || fetch(e.request))
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
+    })
   );
 });
