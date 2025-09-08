@@ -48,7 +48,7 @@
         <div id="journeyGrid" class="journey-grid"></div>
         <div class="actions">
           <button id="reset21" class="danger">重置 21 日旅程</button>
-          <button id="exportBtn" class="">匯出旅程 JSON</button>
+          <button id="exportBtn">匯出旅程 JSON</button>
         </div>
       </div>
     </section>
@@ -65,17 +65,14 @@
     <section id="journal" class="tabpane">
       <div class="card">
         <h2>靈魂日記</h2>
-        <textarea id="journalInput" placeholder="完成任務後，在這裡寫下一句今天的靈魂訊息…"></textarea>
-        <div class="actions">
-          <button id="saveJournal" class="primary">儲存日記</button>
-        </div>
-        <div id="journalList" class="journal-list"></div>
+        <textarea id="journalInput" placeholder="寫下一句今日的靈魂訊息..."></textarea>
+        <button id="saveJournal" class="primary">儲存</button>
+        <ul id="journalList" class="journal-list"></ul>
       </div>
     </section>
   </main>
 
-  <footer class="app-footer">Powered by Enervi7 ✦ ©2025 彌悅</footer>
-
+  <!-- Scripts -->
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 </body>
