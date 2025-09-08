@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Enervi7 • 光之七境</title>
+  <meta name="theme-color" content="#7b61ff" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="icons/icon-192.png">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Enervi7<span>光之七境</span></h1>
+    <nav class="tabs">
+      <button class="tab active" data-tab="today">今天</button>
+      <button class="tab" data-tab="journey">旅程</button>
+      <button class="tab" data-tab="badges">徽章</button>
+      <button class="tab" data-tab="journal">日記</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Today Tab -->
+    <section id="today" class="tabpane active">
+      <div class="card">
+        <h2>今日境界</h2>
+        <div id="todayCard" class="stage-card">
+          <p class="muted">點擊「抽卡」開始今天的冒險 ✦</p>
+        </div>
+        <div class="actions">
+          <button id="drawBtn" class="primary">抽卡</button>
+          <button id="completeBtn" class="ok" disabled>完成任務</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>能量曼陀羅</h2>
+        <svg id="mandala" viewBox="0 0 300 300" class="mandala"></svg>
+        <p class="muted">每完成一項任務，花瓣會逐漸點亮。</p>
+      </div>
+    </section>
+
+    <!-- Journey Tab -->
+    <section id="journey" class="tabpane">
+      <div class="card">
+        <h2>21日冒險地圖</h2>
+        <div id="journeyGrid" class="journey-grid"></div>
+        <div class="actions">
+          <button id="reset21" class="danger">重置 21 日旅程</button>
+          <button id="exportBtn" class="">匯出旅程 JSON</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges Tab -->
+    <section id="badges" class="tabpane">
+      <div class="card">
+        <h2>成就徽章</h2>
+        <ul id="badgeList" class="badge-list"></ul>
+      </div>
+    </section>
+
+    <!-- Journal Tab -->
+    <section id="journal" class="tabpane">
+      <div class="card">
+        <h2>靈魂日記</h2>
+        <textarea id="journalInput" placeholder="完成任務後，在這裡寫下一句今天的靈魂訊息…"></textarea>
+        <div class="actions">
+          <button id="saveJournal" class="primary">儲存日記</button>
+        </div>
+        <div id="journalList" class="journal-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">Powered by Enervi7 ✦ ©2025 彌悅</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
