@@ -1,61 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Enervi7 • 光之七境</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="icons/icon-192.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enervi7 光之七境</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="app-header">
-    <h1>Enervi7<span>光之七境</span></h1>
-    <nav class="tabs">
-      <button class="tab active" data-tab="today">今天</button>
-      <button class="tab" data-tab="journey">旅程</button>
-      <button class="tab" data-tab="badges">徽章</button>
-      <button class="tab" data-tab="journal">日記</button>
+  <header>
+    <h1>Enervi7 光之七境</h1>
+    <nav>
+      <button onclick="showSection('today')">今天</button>
+      <button onclick="showSection('map')">旅程</button>
+      <button onclick="showSection('badge')">徽章</button>
+      <button onclick="showSection('diary')">日記</button>
     </nav>
   </header>
 
-  <main>
-    <!-- Today Tab -->
-    <section id="today" class="tabpane active">
-      <div class="card">
-        <h2>今日境界</h2>
-        <div id="todayCard" class="stage-card">
-          <p class="muted">點擊「抽卡」開始今天的冒險 ✦</p>
-        </div>
-        <div class="actions">
-          <button id="drawBtn" class="primary">抽卡</button>
-          <span id="drawInfo" class="muted" style="margin-left:8px;"></span>
-        </div>
-      </div>
+  <!-- 今日抽卡 -->
+  <section id="today" class="page active">
+    <h2>今日境界</h2>
+    <p>點擊「抽卡」開始今天的冒險 ✦</p>
+    <button id="drawCardBtn">抽卡</button>
+    <div id="cardResult" class="card"></div>
+    <p id="drawCount"></p>
+  </section>
 
-      <div class="card">
-        <h2>能量曼陀羅</h2>
-        <svg id="mandala" viewBox="0 0 300 300" class="mandala"></svg>
-        <p id="progressInfo" class="muted"></p>
-      </div>
-    </section>
+  <!-- 21日冒險地圖 -->
+  <section id="map" class="page">
+    <h2>21日冒險地圖</h2>
+    <canvas id="mandala" width="250" height="250"></canvas>
+  </section>
 
-    <!-- Journal Tab -->
-    <section id="journal" class="tabpane">
-      <div class="card">
-        <h2>靈魂日記</h2>
-        <textarea id="journalInput" placeholder="寫下一句今日的靈魂訊息..."></textarea>
-        <button id="saveJournal" class="primary">儲存</button>
-        <ul id="journalList" class="journal-list"></ul>
-      </div>
-    </section>
-  </main>
+  <!-- 成就徽章 -->
+  <section id="badge" class="page">
+    <h2>成就徽章</h2>
+    <ul id="badgeList"></ul>
+  </section>
 
-  <footer class="footer">
+  <!-- 靈魂日記 -->
+  <section id="diary" class="page">
+    <h2>靈魂日記</h2>
+    <input type="text" id="diaryInput" placeholder="寫下一句今日的靈魂訊息...">
+    <button id="saveDiaryBtn">保存</button>
+    <ul id="diaryList"></ul>
+  </section>
+
+  <footer>
     <p>© Enervi7 — 彌悅<br>Powered by Enervi7 ✦ ©2025 彌悅</p>
   </footer>
 
-  <script src="js/cards.js"></script>
-  <script src="js/app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
